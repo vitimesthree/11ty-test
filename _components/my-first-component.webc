@@ -1,0 +1,38 @@
+<p class="call">General Kenobi</p>
+
+<!--
+    This style is global so we're using a class to make it more specific.
+    You can alternatively add webc:scoped to the <style> tag to auto-generate
+    a name for youand make it so the style only applies to things inside the WebC file.
+-->
+
+<style>
+    .call {
+        color: rebeccapurple;
+        text-decoration: underline;
+    }
+    .call::after {
+        content: '!';
+    }
+    .response {
+        color: blue;
+        text-decoration: underline;
+    }
+</style>
+
+<script>
+    class MyFirstComponent extends HTMLElement {
+        connectedCallback() {
+        setTimeout(() => {
+            this.appendMessage('This will make a fine addition to my collection')
+        }, 2_000)
+        }
+        appendMessage(message) {
+        const p = document.createElement('p')
+        p.textContent = message
+        p.classList.add('message')
+        this.appendChild(p)
+        }
+    }
+    window.customElements.define('my-first-component', MyFirstComponent)
+  </script>

@@ -1,0 +1,34 @@
+---
+layout: layout.webc
+pagination:
+    data: collections.posts
+    size: 2
+---
+<main>
+    <h1>Hello, there</h1>
+
+    <my-first-component></my-first-component>
+
+    {% comment %} 
+        This is a working example of passing data from njk to webc:
+
+        {%- for section in collections.sections -%}
+            {% renderTemplate "webc", section.data %}
+                <x-section :url="`${this.url}`" :title="`${this.title}`"></x-section>
+            {% endrenderTemplate %}
+        {%- endfor -%}
+    {% endcomment %}
+
+    <ul>
+        {% for post in pagination.items %}
+            <li><a href={{ post.url}}>{{ post.data.title }}</a></li>
+        {% endfor %}
+        <a href={{ pagination.href.previous }}>Vorige</a>
+        <a href={{ pagination.href.next }}>Volgende</a>
+    </ul>
+
+    {% comment %}
+        Aaand eleventy is officially better than Jekyll.
+        A bitch to set up though.
+    {% endcomment %}
+</main>

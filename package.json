@@ -1,20 +1,17 @@
 {
-  "name": "eleventy",
+  "name": "11ty-webc-nutshell",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx @11ty/eleventy"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
-  },
   "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-webc": "^0.11.2",
-    "js-yaml": "^4.1.0",
-    "sass": "^1.70.0"
+    "liquidjs": "^10.10.0"
   }
 }
